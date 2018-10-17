@@ -1,4 +1,4 @@
-package com.tactfactory.asciiart.entities.alphabets;
+package com.tactfactory.asciiart.entities.alphabets.defaultalphabet;
 
 import com.tactfactory.asciiart.entities.alphabets.datas.DefaultAlphabetDatas;
 

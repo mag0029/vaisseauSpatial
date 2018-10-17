@@ -1,12 +1,12 @@
 package com.tactfactory.asciiart.managers;
 
-import com.tactfactory.asciiart.entities.alphabets.DefaultAlphabet;
+import com.tactfactory.asciiart.entities.alphabets.BaseAlphabet;
 
 public class AsciiManager {
 
-	private DefaultAlphabet alphabet;
+	private BaseAlphabet alphabet;
 
-	public AsciiManager(DefaultAlphabet alphabet) {
+	public AsciiManager(BaseAlphabet alphabet) {
 		super();
 		this.alphabet = alphabet;
 	}
@@ -22,12 +22,12 @@ public class AsciiManager {
 
 			// char maj 65 => 90
 			for (char letter : message.toCharArray()) {
-				if (letter >= 65 && letter <= 90) {
-					builder.append(ROW.substring((letter - 65) * this.alphabet.getW(),
-							(letter - 65) * this.alphabet.getW() + this.alphabet.getW()));
+				if (letter >= this.alphabet.getMinRange() && letter <= this.alphabet.getMaxRange()) {
+					builder.append(ROW.substring((letter - this.alphabet.getMinRange()) * this.alphabet.getW(),
+							(letter - this.alphabet.getMinRange()) * this.alphabet.getW() + this.alphabet.getW()));
 				} else {
-					builder.append(ROW.substring(this.alphabet.getW() * 26,
-							(this.alphabet.getW() * 26) + this.alphabet.getW()));
+					builder.append(ROW.substring(this.alphabet.getW() * this.alphabet.getItemNb(),
+							(this.alphabet.getW() * this.alphabet.getItemNb()) + this.alphabet.getW()));
 				}
 
 			}

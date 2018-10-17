@@ -22,4 +22,14 @@ public class ScannerProvider {
 	public Scanner getScanner() {
 		return scanner;
 	}
+
+	public int nextInt() {
+		int result = this.scanner.nextInt();
+		
+		if (this.scanner.hasNextLine()) {
+			this.scanner.nextLine();
+		}
+		
+		return result;
+	}
 }
