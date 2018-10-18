@@ -31,7 +31,7 @@ public class AsciiManager {
 				}
 
 			}
-			builder.append("\n");
+			builder.append('\n');
 		}
 
 		System.out.println("Translate : " + message);
